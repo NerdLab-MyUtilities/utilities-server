@@ -10,18 +10,18 @@ import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
-  imports: [
-    SequelizeModule.forRoot({
-      dialect: 'sqlite',
-      storage: './utilities.sqlite',
-      models: [User, Role, UserRoles],
-      autoLoadModels: true,
-    }),
-    UsersModule,
-    RolesModule,
-    AuthModule,
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        SequelizeModule.forRoot({
+            dialect: 'sqlite',
+            storage: './utilities.sqlite',
+            models: [User, Role, UserRoles],
+            autoLoadModels: true,
+        }),
+        UsersModule,
+        RolesModule,
+        AuthModule,
+    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {}
