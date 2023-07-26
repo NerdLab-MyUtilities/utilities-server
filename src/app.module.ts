@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { UserRoles } from './modules/roles/user-roles.model';
 import { Role } from './modules/roles/roles.model';
 import { User } from './modules/users/users.model';
+import { RolesModule } from './modules/roles/roles.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { User } from './modules/users/users.model';
       models: [User, Role, UserRoles],
       autoLoadModels: true,
     }),
+    UsersModule,
+    RolesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
